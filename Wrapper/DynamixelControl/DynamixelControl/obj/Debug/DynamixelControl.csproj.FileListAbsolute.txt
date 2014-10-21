@@ -1,0 +1,12 @@
+D:\Documents\GitHub\C#\Wrapper\DynamixelControl\DynamixelControl\bin\Debug\DynamixelControl.exe.config
+D:\Documents\GitHub\C#\Wrapper\DynamixelControl\DynamixelControl\obj\Debug\DynamixelControl.csprojResolveAssemblyReference.cache
+D:\Documents\GitHub\C#\Wrapper\DynamixelControl\DynamixelControl\bin\Debug\DynamixelControl.exe
+D:\Documents\GitHub\C#\Wrapper\DynamixelControl\DynamixelControl\bin\Debug\DynamixelControl.pdb
+D:\Documents\GitHub\C#\Wrapper\DynamixelControl\DynamixelControl\obj\Debug\DynamixelControl.exe
+D:\Documents\GitHub\C#\Wrapper\DynamixelControl\DynamixelControl\obj\Debug\DynamixelControl.pdb
+D:\Documents\GitHub\C-sharp\Wrapper\DynamixelControl\DynamixelControl\bin\Debug\DynamixelControl.exe.config
+D:\Documents\GitHub\C-sharp\Wrapper\DynamixelControl\DynamixelControl\obj\Debug\DynamixelControl.exe
+D:\Documents\GitHub\C-sharp\Wrapper\DynamixelControl\DynamixelControl\obj\Debug\DynamixelControl.pdb
+D:\Documents\GitHub\C-sharp\Wrapper\DynamixelControl\DynamixelControl\bin\Debug\DynamixelControl.exe
+D:\Documents\GitHub\C-sharp\Wrapper\DynamixelControl\DynamixelControl\bin\Debug\DynamixelControl.pdb
+D:\Documents\GitHub\C-sharp\Wrapper\DynamixelControl\DynamixelControl\obj\Debug\DynamixelControl.csprojResolveAssemblyReference.cache
