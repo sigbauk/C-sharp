@@ -11,13 +11,20 @@ namespace DynamixelControl
         public static int Main()
         {
 
-            Communication.Terminate();
+            DynamixelControl.Terminate();
 
-            Communication.Initialize();
+            DynamixelControl.Initialize();
 
-            Communication.SetGoalPosition(2, 12);
+            DynamixelControl.SetMovingSpeed(2, 123);
 
-            Communication.Terminate();
+            bool a = true;
+
+            while (a)
+            {
+                Console.WriteLine(DynamixelControl.GetPresentLoad(2));
+            }
+
+            DynamixelControl.Terminate();
 
             Console.ReadLine();
 

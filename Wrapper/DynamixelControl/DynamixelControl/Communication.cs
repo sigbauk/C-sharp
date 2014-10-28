@@ -9,7 +9,7 @@ namespace DynamixelControl
     /// <summary>
     /// The methods in this class are used for communication between the computer and the Dynamixel actuator(s).
     /// </summary>
-    public class Communication
+    public class DynamixelControl
     {
 
         private const int DEFAULT_PORTNUM = 3; //com3
@@ -638,11 +638,11 @@ namespace DynamixelControl
             {
                 if (GetMovementMode(id) == 0) // WHEEL MODE
                 { 
-                    if(value < 2047) value = 2047;
+                    if(value > 2047) value = 2047;
                 }
                 else // JOINT MODE
                 {
-                    if(value < 1023) value = 1023;
+                    if(value > 1023) value = 1023;
                 }
             }
 
@@ -978,7 +978,7 @@ namespace DynamixelControl
         /// Dictionary containing the control table. Key is parameter name, value is address. 
         /// </summary>
         private static Dictionary<string, int> controlTableDictionary = new Dictionary<string, int>();
-        static Communication() // dictionary entries:
+        static DynamixelControl() // dictionary entries:
         {
             controlTableDictionary.Add("model number(l)", 0);
             controlTableDictionary.Add("model number(h)", 1);
