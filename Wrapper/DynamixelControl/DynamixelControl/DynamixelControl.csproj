@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DynamixelControl.cs" />
+    <Compile Include="SensorControl.cs" />
     <Compile Include="TestProgram.cs" />
     <Compile Include="Wrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

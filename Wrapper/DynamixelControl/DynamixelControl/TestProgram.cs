@@ -15,13 +15,12 @@ namespace DynamixelControl
         public static void Main()
         {
 
-           
-
-     
-
             DynamixelControl.Initialize();
 
-            Console.WriteLine(DynamixelControl.GetModelNumber(4));
+            //Console.WriteLine(DynamixelControl.GetModelNumber(2));
+
+
+            Console.WriteLine(SensorControl.GetBuzzerData0(100));
 
            //DynamixelControl.ToggleWheelMode(4);
 

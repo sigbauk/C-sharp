@@ -801,15 +801,15 @@ namespace DynamixelControl
             if (value > 1023) value = 1023;
             WriteToDxl(id, controlTableDictionary["punch(l)"], value);
         }
-	
 
 
 
 
 
-	
 
-        // ADDITIONAL METHODS
+
+
+        // ADDITIONAL METHODS for improved usability:
 
         /// <summary>
         /// Toggles the Torque on or off

@@ -333,7 +333,7 @@ namespace DynamixelControl
         }
 
         /// <summary>
-        /// Counts the number of times a certain sound level is measured
+        /// Returns the number of times a certain sound level is measured
         /// (See online manual for supplementary information)
         /// </summary>
         /// <param name="id">Dynamixel sensor ID</param>
@@ -374,24 +374,29 @@ namespace DynamixelControl
             WriteToDxl(id, controlTableDictionary["sound detected time"], value);
         }
 
-        
-        // MÅ UNDERSØKES  - hvordan fungerer dette her? Get/set/play?
-        public static void BuzzerData0(int id, int noteAddress)
-        {
-            WriteToDxl(id, controlTableDictionary["buzzer data 0"], noteAddress);
-        }
 
         /// <summary>
-        /// Play buzzer notes. Simple beep sounds can be made. 52 musical notes can be made 
-        /// in buzzer tones, and there are also whole- and halftones in each octave. 
-        /// See online manual for note table: 
-        /// (http://support.robotis.com/en/product/auxdevice/sensor/dxl_ax_s1.htm#Ax_S1_Address_28)
+        /// Returns the current set buzzer note (noteAddress) on the Dynamixel sensor
+        /// Note table:
+        /// http://support.robotis.com/en/product/auxdevice/sensor/dxl_ax_s1.htm#Ax_S1_Address_28
         /// </summary>
         /// <param name="id">Dynamixel sensor ID</param>
-        /// <param name="noteAddress">Buzzer note to play</param>
-        public static void PlayBuzzerNote(int id, int noteAddress)
+        /// <returns>The current set buzzer note</returns>
+        public static int GetBuzzerData0(int id)
         {
-            BuzzerData0(id, noteAddress);
+            return ReadWordFromDxl(id, controlTableDictionary["buzzer data 0"]);
+        }
+        
+       /// <summary>
+       /// Plays the desired buzzer note (noteAddress) on the Dynamixel sensor
+       /// Note table: 
+       /// http://support.robotis.com/en/product/auxdevice/sensor/dxl_ax_s1.htm#Ax_S1_Address_28
+       /// </summary>
+       /// <param name="id">Dynamixel sensor ID</param>
+       /// <param name="noteAddress">Buzzer note (see buzzer note table online)</param>
+        public static void SetBuzzerData0(int id, int noteAddress)
+        {
+            WriteToDxl(id, controlTableDictionary["buzzer data 0"], noteAddress);
         }
 
 
@@ -479,7 +484,7 @@ namespace DynamixelControl
         /// If this data is read, remocon arrived data will be set to 0 (marked as read).
         /// </summary>
         /// <param name="id">Dynamixel sensor ID</param>
-        /// <returns></returns>
+        /// <returns>Received Remocon data</returns>
         public static int GetRemoconRXData(int id)
         {
             return ReadFromDxl(id, controlTableDictionary["remocon rx data 0"]);
@@ -559,22 +564,37 @@ namespace DynamixelControl
         
 
         /*
-         * Additional subroutines: 
+         * ADDITIONAL METHODS for improved usability: 
          */
 
-        /* MÅ SEES PÅ
-        public static int GetBuzzerNotes(int id, int noteAddress)
+
+        /// <summary>
+        /// Returns the current set buzzer note on the Dynamixel sensor. 
+        /// (This method runs GetBuzzerData0)
+        /// See online manual for note table:
+        /// http://support.robotis.com/en/product/auxdevice/sensor/dxl_ax_s1.htm#Ax_S1_Address_28
+        /// </summary>
+        /// <param name="id">Dynamixel sensor ID</param>
+        /// <returns>The current buzzer note</returns>
+        public static int GetCurrentBuzzerNote(int id)
         {
-            return GetBuzzerData0(id, noteAddress );
+            return GetBuzzerData0(id);
         }
 
-        public static void SetBuzzerNotes(int id, int value)
+        /// <summary>
+        /// Play buzzer notes. Simple beep sounds can be made. 52 musical notes can be made 
+        /// in buzzer tones, and there are also whole- and halftones in each octave.
+        /// (This method runs SetBuzzerData0).
+        /// See online manual for note table: 
+        /// (http://support.robotis.com/en/product/auxdevice/sensor/dxl_ax_s1.htm#Ax_S1_Address_28)
+        /// </summary>
+        /// <param name="id">Dynamixel sensor ID</param>
+        /// <param name="noteAddress">Buzzer note to play</param>
+        public static void PlayBuzzerNote(int id, int noteAddress)
         {
-            SetBuzzerData0(id, value);
+            SetBuzzerData0(id, noteAddress);
         }
-        
-         * 
-         * */
+
 
         /// <summary>
         /// Returns the current set buzzer ringing time. 
