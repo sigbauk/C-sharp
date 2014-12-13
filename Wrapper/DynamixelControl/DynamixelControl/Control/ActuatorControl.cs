@@ -9,7 +9,7 @@ namespace DynamixelControl
     /// <summary>
     /// The methods in this class are used for communication between the computer and the Dynamixel actuator(s).
     /// </summary>
-    public class DynamixelControl
+    public class ActuatorControl
     {
 
         private const int DEFAULT_PORTNUM = 3; //com3
@@ -978,7 +978,7 @@ namespace DynamixelControl
         /// Dictionary containing the control table. Key is parameter name, value is address. 
         /// </summary>
         private static Dictionary<string, int> controlTableDictionary = new Dictionary<string, int>();
-        static DynamixelControl() // dictionary entries:
+        static ActuatorControl() // dictionary entries:
         {
             controlTableDictionary.Add("model number(l)", 0);
             controlTableDictionary.Add("model number(h)", 1);

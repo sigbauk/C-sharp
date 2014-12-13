@@ -42,8 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DynamixelControl.cs" />
-    <Compile Include="SensorControl.cs" />
+    <Compile Include="Control\ActuatorControl.cs" />
+    <Compile Include="Control\SensorControl.cs" />
     <Compile Include="TestProgram.cs" />
     <Compile Include="Wrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -26,7 +26,6 @@ namespace DynamixelControl
         [DllImport("DynamixelControl32_dll.dll")]
         public static extern void dxl_terminate();
 
-
         /*
          *
          * PACKET COMMUNICATION METHODS - subroutines used to transmit and receive packets

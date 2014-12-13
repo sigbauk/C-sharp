@@ -361,7 +361,7 @@ namespace DynamixelControl
         /// <returns></returns>
         public static int GetSoundDetectedTime(int id)
         {
-            return ReadFromDxl(id, controlTableDictionary["sound detected time"]);
+            return ReadFromDxl(id, controlTableDictionary["sound detected time(l)"]);
         }
 
         /// <summary>
@@ -371,7 +371,7 @@ namespace DynamixelControl
         /// <param name="value"></param>
         public static void SetSoundDetectedTime(int id, int value)
         {
-            WriteToDxl(id, controlTableDictionary["sound detected time"], value);
+            WriteToDxl(id, controlTableDictionary["sound detected time(l)"], value);
         }
 
 
@@ -599,6 +599,9 @@ namespace DynamixelControl
         /// <summary>
         /// Returns the current set buzzer ringing time. 
         /// A returned value of 50 --> 5 seconds.
+        /// Special functions are also available,
+        /// see online manual for more info:
+        /// http://support.robotis.com/en/product/auxdevice/sensor/dxl_ax_s1.htm#Ax_S1_Address_29
         /// </summary>
         /// <param name="id">Dynamixel sensor ID</param>
         /// <returns>Unit: 0.1 second</returns>
@@ -610,6 +613,9 @@ namespace DynamixelControl
         /// <summary>
         /// Set buzzer ringing time
         /// A value of 50 --> 5 seconds.
+        /// Special functions are also available,
+        /// see online information for more info:
+        /// http://support.robotis.com/en/product/auxdevice/sensor/dxl_ax_s1.htm#Ax_S1_Address_29
         /// </summary>
         /// <param name="id">Dynamixel sensor ID</param>
         /// <param name="value">Ringing time. Unit: 0.1 second</param>
